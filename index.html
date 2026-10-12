@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEM Student Events</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header and navigation -->
+    <header>
+        <div class="brand">
+            <img src="images/logo.png" alt="IEM logo">
+            <div>
+                <h2>IEM Student Events</h2>
+                <p>Department of CSE (AIML)</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#register">Register</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <button id="themeButton" type="button">Dark mode</button>
+        </nav>
+    </header>
+
+    <!-- Home section -->
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <p class="small-title">LEARN • BUILD • CELEBRATE</p>
+            <h1>Something exciting is happening on campus.</h1>
+            <p>Find workshops, coding events, talks and cultural programmes organised for students.</p>
+            <a class="button" href="#events">Explore events</a>
+            <a class="button button-light" href="#register">Register now</a>
+        </div>
+        <img class="hero-image" src="images/tech-fest.jpg" alt="Students at a college technology event">
+    </section>
+
+    <!-- Events section -->
+    <section id="events" class="section">
+        <h2>Upcoming Events</h2>
+        <p class="intro">Choose an event and join us. The dates below are sample details for this assignment.</p>
+
+        <div class="filters">
+            <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="technical">Technical</button>
+            <button class="filter-button" data-filter="workshop">Workshop</button>
+            <button class="filter-button" data-filter="cultural">Cultural</button>
+            <button class="filter-button" data-filter="lecture">Lecture</button>
+        </div>
+
+        <div class="event-grid" id="eventGrid">
+            <article class="event-card" data-category="technical">
+                <img src="images/hackathon.jpg" alt="Hackathon event">
+                <div class="card-content">
+                    <span class="tag">Technical</span>
+                    <h3>Campus Hackathon</h3>
+                    <p><strong>Date:</strong> 7 November 2026</p>
+                    <p><strong>Venue:</strong> Computer Lab</p>
+                    <p>Work in a team and build a small solution to a real-world problem.</p>
+                </div>
+            </article>
+
+            <article class="event-card" data-category="workshop">
+                <img src="images/workshop.jpg" alt="Student workshop">
+                <div class="card-content">
+                    <span class="tag">Workshop</span>
+                    <h3>Web Development Basics</h3>
+                    <p><strong>Date:</strong> 20 November 2026</p>
+                    <p><strong>Venue:</strong> Lab 2</p>
+                    <p>Learn how HTML, CSS and JavaScript work together to create websites.</p>
+                </div>
+            </article>
+
+            <article class="event-card" data-category="technical">
+                <img src="images/robotics.jpg" alt="Robotics activity">
+                <div class="card-content">
+                    <span class="tag">Technical</span>
+                    <h3>Robotics Challenge</h3>
+                    <p><strong>Date:</strong> 5 December 2026</p>
+                    <p><strong>Venue:</strong> IoT Lab</p>
+                    <p>Try a beginner-friendly challenge involving sensors and small robots.</p>
+                </div>
+            </article>
+
+            <article class="event-card" data-category="lecture">
+                <img src="images/guest-lecture.jpg" alt="Guest lecture">
+                <div class="card-content">
+                    <span class="tag">Lecture</span>
+                    <h3>AI: From Ideas to Applications</h3>
+                    <p><strong>Date:</strong> 15 January 2027</p>
+                    <p><strong>Venue:</strong> Seminar Hall</p>
+                    <p>A guest talk about practical uses of artificial intelligence.</p>
+                </div>
+            </article>
+
+            <article class="event-card" data-category="cultural">
+                <img src="images/cultural-night.jpg" alt="College cultural programme">
+                <div class="card-content">
+                    <span class="tag">Cultural</span>
+                    <h3>Campus Cultural Evening</h3>
+                    <p><strong>Date:</strong> 10 February 2027</p>
+                    <p><strong>Venue:</strong> Main Auditorium</p>
+                    <p>An evening of music, dance and performances by students.</p>
+                </div>
+            </article>
+        </div>
+        <p id="noEvents" class="message" hidden>No events in this category yet.</p>
+    </section>
+
+    <!-- Registration section -->
+    <section id="register" class="section tinted">
+        <h2>Event Registration</h2>
+        <p class="intro">Fill in the form to register for an event. This demo checks your details in the browser only.</p>
+
+        <form id="registrationForm">
+            <div class="form-row">
+                <div>
+                    <label for="studentName">Full name</label>
+                    <input type="text" id="studentName" placeholder="Enter your name">
+                    <small class="error" id="nameError"></small>
+                </div>
+                <div>
+                    <label for="rollNumber">Roll number (10 digits)</label>
+                    <input type="text" id="rollNumber" placeholder="Enter 10-digit roll number">
+                    <small class="error" id="rollError"></small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="you@example.com">
+                    <small class="error" id="emailError"></small>
+                </div>
+                <div>
+                    <label for="phone">Phone number</label>
+                    <input type="tel" id="phone" placeholder="10-digit mobile number">
+                    <small class="error" id="phoneError"></small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="department">Department</label>
+                    <select id="department">
+                        <option value="">Choose department</option>
+                        <option>CSE (AIML)</option>
+                        <option>CSE</option>
+                        <option>IT</option>
+                        <option>ECE</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="eventChoice">Choose event</label>
+                    <select id="eventChoice">
+                        <option value="">Choose an event</option>
+                        <option>Campus Hackathon</option>
+                        <option>Web Development Basics</option>
+                        <option>Robotics Challenge</option>
+                        <option>AI: From Ideas to Applications</option>
+                        <option>Campus Cultural Evening</option>
+                    </select>
+                </div>
+            </div>
+
+            <fieldset>
+                <legend>Gender (optional)</legend>
+                <label class="radio-label"><input type="radio" name="gender" value="Female"> Female</label>
+                <label class="radio-label"><input type="radio" name="gender" value="Male"> Male</label>
+                <label class="radio-label"><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+            </fieldset>
+
+            <button class="button" type="submit">Submit registration</button>
+            <p id="formMessage" class="message" aria-live="polite"></p>
+        </form>
+    </section>
+
+    <!-- Gallery section -->
+    <section id="gallery" class="section">
+        <h2>Event Gallery</h2>
+        <p class="intro">A few moments from technical and cultural activities.</p>
+        <div class="gallery-grid">
+            <figure><img src="images/tech-fest.jpg" alt="Technology fest"><figcaption>Technology Fest</figcaption></figure>
+            <figure><img src="images/hackathon.jpg" alt="Hackathon"><figcaption>Hackathon</figcaption></figure>
+            <figure><img src="images/workshop.jpg" alt="Workshop"><figcaption>Workshop</figcaption></figure>
+            <figure><img src="images/robotics.jpg" alt="Robotics"><figcaption>Robotics</figcaption></figure>
+            <figure><img src="images/guest-lecture.jpg" alt="Guest lecture"><figcaption>Guest Lecture</figcaption></figure>
+            <figure><img src="images/cultural-night.jpg" alt="Cultural night"><figcaption>Cultural Evening</figcaption></figure>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="section tinted">
+        <h2>About Us</h2>
+        <p>
+            IEM Student Events is a sample college event webpage created as part of a
+            web development assignment. It brings event information, registration,
+            and a photo gallery together in one place.
+        </p>
+        <p><strong>Faculty coordinator:</strong> [Add faculty coordinator name]</p>
+        <p><strong>Student coordinator:</strong> [Add student coordinator name]</p>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="section">
+        <h2>Contact & Feedback</h2>
+        <p class="intro">Replace the sample details below with the correct information before submission.</p>
+        <div class="contact-box">
+            <p><strong>Institute:</strong> Institute of Engineering & Management, Kolkata</p>
+            <p><strong>Department:</strong> CSE (AIML)</p>
+            <p><strong>Email:</strong> events@example.com</p>
+            <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+        </div>
+
+        <form id="feedbackForm">
+            <h3>Send feedback</h3>
+            <label for="feedbackName">Your name</label>
+            <input type="text" id="feedbackName" placeholder="Enter your name">
+            <label for="feedbackEmail">Your email</label>
+            <input type="email" id="feedbackEmail" placeholder="you@example.com">
+            <label for="feedbackText">Message</label>
+            <textarea id="feedbackText" rows="4" placeholder="Write at least 15 characters"></textarea>
+            <p id="feedbackMessage" class="message" aria-live="polite"></p>
+            <button class="button" type="submit">Send feedback</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Made by [Your Name] | Web Development Assignment</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
